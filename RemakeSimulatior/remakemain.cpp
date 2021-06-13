@@ -6,13 +6,6 @@ RemakeMain::RemakeMain(QWidget *parent)
     , ui(new Ui::RemakeMain)
 {
     ui->setupUi(this);
-
-    // 利用定时器，定时变换角度，进行旋转。
-    QTimer *pTimer = new QTimer(this);
-    pTimer->setInterval(1);
-    connect(pTimer, SIGNAL(timeout()), this, SLOT(updatePaint()));
-    pTimer->start();
-
 }
 
 RemakeMain::~RemakeMain()
@@ -78,3 +71,11 @@ void RemakeMain::updatePaint()
     update();
 }
 
+
+void RemakeMain::on_remakeButton_clicked()
+{
+    // 利用定时器，定时变换角度，进行旋转。
+    pTimer->setInterval(1);
+    connect(pTimer, SIGNAL(timeout()), this, SLOT(updatePaint()));
+    pTimer->start();
+}

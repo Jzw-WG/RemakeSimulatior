@@ -23,8 +23,11 @@ public:
 
 private:
     Ui::RemakeMain *ui;
+    QTimer *pTimer = new QTimer(this);
 
 public slots:
     void updatePaint();
+private slots:
+    void on_remakeButton_clicked();
 };
 #endif // REMAKEMAIN_H
